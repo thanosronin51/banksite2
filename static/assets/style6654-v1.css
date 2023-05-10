@@ -744,7 +744,6 @@ nav#primary > div > ul > li:last-of-type > div {
     overflow: hidden;
     bottom: 0px;
     z-index: 90;
-    background-image: url("../images/bg-curve.png");
     background-repeat: no-repeat;
     background-position: center top;
     /* opacity: .5; */
