@@ -1,0 +1,153 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mb-4">Your Cards</h1>
+
+{% if user.carddetails_set.all %}
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for card in user.carddetails_set.all %}
+      <div class="col">
+        <div class="card card-bank">
+          <div class="card-header bg-primary text-white text-uppercase">
+            {{ card.get_card_type_display|title }}
+          </div>
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-7">
+                <p class="card-number">**** **** **** {{ card.card_number|slice:"-4" }}</p>
+              </div>
+              
+                <button class="btn btn-link copy-button" data-clipboard-target=".card-number"><i class="fas fa-copy"></i> Copy</button>
+              
+            </div>
+            <div class="row">
+              <div class="col-5">
+                <p class="card-cvv">CVV: <span class="cvv">{{ card.cvv }}</span></p>
+                <button class="btn btn-link copy-button" data-clipboard-target=".cvv"><i class="fas fa-copy"></i> Copy</button>
+              </div>
+              <div class="col-7">
+                <p class="card-expiry">Expiry Date: {{ card.expiry_date }}</p>
+              </div>
+            </div>
+            <p class="card-owner">Card Owner: {{ card.card_owner }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>You don't have any cards yet.</p>
+{% endif %}
+
+
+    
+    <div class="mt-4">
+      <a class="btn btn-primary" href="{% url 'bankcard:card_request' %}">Request New Card</a>
+    </div>
+  </div>
+  
+  <style>
+    .card-bank {
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+    }
+    
+    .card-bank .card-header {
+      background-color: #f8f9fa;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 2px solid #dee2e6;
+      border-radius: 6px 6px 0 0;
+    }
+    
+    .card-bank .card-body {
+      padding: 20px;
+    }
+    
+    .card-bank .card-body p {
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .card-bank .card-body button {
+      float: right;
+      margin-left: 10px;
+    }
+    
+    .card-bank .card-body .row {
+      margin-top: 15px;
+    }
+    
+    .card-bank .card-body .col-7 {
+      text-align: left;
+    }
+    
+    .card-bank .card-body .col-5 {
+      text-align: right;
+    }
+    
+    @media only screen and (max-width: 991px) {
+      .card-bank .card-body p {
+        font-size: 14px;
+      }
+      
+      .card-bank .card-body button {
+        font-size: 12px;
+      }
+      
+      .card-bank .card-body .row {
+        margin-top: 10px
+;
+      margin-bottom: 10px;
+      }
+
+
+        .card-bank .card-body .col-sm-4 {
+          text-align: center;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        .card-bank .card-body h5 {
+          font-size: 16px;
+        }
+        
+        .card-bank .card-body p {
+          font-size: 12px;
+        }
+        
+        .card-bank .card-body button {
+          font-size: 10px;
+          padding: 5px 10px;
+        }
+        
+        .card-bank .card-body .row {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        
+        .card-bank .card-body .col-sm-4 {
+          text-align: left;
+        }
+      }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+  <script>
+    var clipboard = new ClipboardJS('.copy-button');
+
+    clipboard.on('success', function(e) {
+      e.clearSelection();
+      alert('Copied!');
+    });
+
+    clipboard.on('error', function(e) {
+      alert('Copy failed. Please select the text and copy manually.');
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+                            
+<script type="text/javascript">
+    (function () {
+        var head = document.getElementsByTagName("head").item(0);
+        var script = document.createElement("script");
+        
+        var src = (document.location.protocol == 'https:' 
+            ? 'https://www.formilla.com/scripts/feedback.js' 
+            : 'http://www.formilla.com/scripts/feedback.js');
+        
+        script.setAttribute("type", "text/javascript"); 
+        script.setAttribute("src", src); script.setAttribute("async", true);        
+
+        var complete = false;
+        
+        script.onload = script.onreadystatechange = function () {
+            if (!complete && (!this.readyState 
+                    || this.readyState == 'loaded' 
+                    || this.readyState == 'complete')) {
+                complete = true;
+                Formilla.guid = 'cs7b1220-46a5-4b3a-a3b0-b72feff4a3eb';
+                Formilla.loadWidgets();                
+            }
+        };
+
+        head.appendChild(script);
+    })();
+</script>
+                                    
+<!--End of Tawk.to Script-->
+<!-- Start of Async Drift Code -->
+    <script>
+    "use strict";
+
+    !function() {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+        t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('vmzzbzmy8iub');
+    </script>
+    <!-- End of Async Drift Code -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="9I2up1iCY8MRp5B86FaGgvVOKTeuzEMI6jkSlKIb">
+    <title>IBCOINEX LIMITED | Welcome to IBCOINEX</title>
+
+    <meta name="description" content="We are online">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="IBCOINEX LIMITED - Welcome to IBCOINEX">
+    <meta itemprop="description" content="We are online">
+    <meta itemprop="image" content="https://1.bp.blogspot.com/-yIt05NVyOF0/WdYdw6FRM7I/AAAAAAAAA2c/Y8szr6n7DNwk_og9uPp8Fw1Wvz2PwAMZQCLcBGAs/s1600/Letter%2BB%2BLogo%2BDesign%2BDesign%2BTransparent%2Bfree.png">
+
+    <link rel="icon" href="{% static 'img/op3.png' %}" type="image/png" />
+
+    <link href="{% static 'temp/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="{% static 'temp/css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Magnific -->
+    <link rel="stylesheet" href="{% static 'temp/css/line.css' %}">
+    <link href="{% static 'temp/css/flexslider.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'temp/css/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Slider -->
+    <link rel="stylesheet" href="{% static 'temp/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'temp/css/owl.theme.default.min.css' %}" />
+    <!-- Main Css -->
+    <link href="{% static 'temp/css/style.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'temp/css/colors/default.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        {
+            tawk to codess
+        }
+    </script>
+
+
+    <!-- Navbar STart -->
+    <header id="topnav" class="sticky defaultscroll">
+        <div class="container">                    
+
+                    
+            <!-- Logo container-->
+            <div>
+                <a class="logo" href="/">
+                    <img style="max-width: 400px;" src="https://1.bp.blogspot.com/-yIt05NVyOF0/WdYdw6FRM7I/AAAAAAAAA2c/Y8szr6n7DNwk_og9uPp8Fw1Wvz2PwAMZQCLcBGAs/s1600/Letter%2BB%2BLogo%2BDesign%2BDesign%2BTransparent%2Bfree.png" height="35" alt="" class="mr-2">
+                </a>
+            </div>
+            <div class="buy-button">
+
+                <a href="{% url 'accounts:login' %}" class="mr-3 btn btn-primary login-btn-success">login</a>
+                <a href="{% url 'accounts:register' %}" class="btn btn-primary login-btn-success ">Get Started</a>
+
+
+            </div>
+            <!--end login button-->
+            <!-- End Logo container-->
+            <div class="menu-extras">
+                <div class="menu-item">
+                    <!-- Mobile menu toggle-->
+                    <a class="navbar-toggle">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </div>
+            </div>
+
+            <div id="navigation">
+                <!-- Navigation Menu-->
+                <ul class="navigation-menu">
+
+                    <li><a href="{% url 'about' %}">About us</a></li>
+
+
+                </ul>
+
+
+                </ul>
+                <!--end navigation menu-->
+                <div class="buy-menu-btn d-none">
+                    <a href="{% url 'accounts:login' %}" target="_blank" class="btn btn-success">Login</a>
+                    <a href="{% url 'accounts:register' %}" target="_blank" class="btn btn-success">Get Started</a>
+                </div>
+                <!--end login button-->
+            </div>
+            <!--end navigation-->
+        </div>
+        <!--end container-->
+    </header>
+    <!--end header-->
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <section class="bg-half-170 bg-soft-primary d-table w-100">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7">
+                    <div class="mt-4 title-heading">
+                        <div class="shadow alert alert-primary-light alert-pills " role="alert">
+                            <span class="content ">Trade Invest stock, and Bond</span>
+                        </div>
+                        <h1 class="mb-3 heading">The Better Way to Trade &amp; Invest</h1>
+                        <p class="para-desck text-dark">IBCOINEX LIMITED helps over 2 million customers achieve their financial goals by helping them trade and invest with ease</p>
+                        <div class="mt-4">
+                            <a href="{% url 'accounts:register' %}" class="pt-3 pb-3 pl-4 pr-4 btn btn-primary">Create Free
+                                Account
+                            </a>
+                        </div>
+                        <br>
+
+<div  class="button"  style="border-radius:4px; color: white;" href="javascript:void(0)">
+                            <select style="color: white; background-color: grey;" class="selectpicker langlg" data-width="fit" onchange="doGTranslate(this);">
+                              <option data-content='<i class="fa fa-globe" aria-hidden="true"></i> Language' ><h4 style="text-decoration-color: white;">Language</h4></option>
+                              <option data-content='<span class="flag-icon flag-icon-af"></span> Afrikaans' value="en|af">Afrikaans</option>
+                              <option  data-content='<span class="flag-icon flag-icon-al"></span> Albanian'  value="en|sq">Albanian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ar"></span> Arabic' value="en|ar">Arabic</option>
+                              <option  data-content='<span class="flag-icon flag-icon-am"></span> Armenian'  value="en|hy">Armenian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-az"></span> Azerbaijani' value="en|az">Azerbaijani</option>
+                              <option  data-content='<span class="flag-icon flag-icon-eu"></span> Basque' value="en|eu">Basque</option>
+                              <option  data-content='<span class="flag-icon flag-icon-be"></span> Belarusian'  value="en|be">Belarusian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-bg"></span> Bulgarian'  value="en|bg">Bulgarian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-cu"></span> Catalan' value="en|ca">Catalan</option>
+                              <option  data-content='<span class="flag-icon flag-icon-cn"></span> Chinese (Simplified)' value="en|zh-CN">Chinese (Simplified)</option>
+                              <option  data-content='<span class="flag-icon flag-icon-tw"></span> Chinese (Traditional)' value="en|zh-TW">Chinese (Traditional)</option>  
+                              <option  data-content='<span class="flag-icon flag-icon-cz"></span> Czech'  value="en|cs">Czech</option>
+                              <option  data-content='<span class="flag-icon flag-icon-dk"></span> Danish' value="en|da">Danish</option>
+                              <option  data-content='<span class="flag-icon flag-icon-nl"></span> Dutch' value="en|nl">Dutch</option>
+                              <option  data-content='<span class="flag-icon flag-icon-us"></span> English' value="en|en">English</option>
+                              <option  data-content='<span class="flag-icon flag-icon-et"></span> Estonian' value="en|et">Estonian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-fi"></span> Finnish'  value="en|fi">Finnish</option>
+                              <option  data-content='<span class="flag-icon flag-icon-fr"></span> French' value="en|fr">French</option>
+                              <option  data-content='<span class="flag-icon flag-icon-gl"></span> Galician' value="en|gl" >Galician</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ge"></span> Georgian' value="en|ka">Georgian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-de"></span> German'  value="en|de">German</option>
+                              <option  data-content='<span class="flag-icon flag-icon-gr"></span> Greek' value="en|el">Greek</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ht"></span> Haitian Creole'  value="en|ht">Haitian Creole</option>
+                              <option  data-content='<span class="flag-icon flag-icon-il"></span> Hebrew' value="en|iw" >Hebrew</option>
+                              <option  data-content='<span class="flag-icon flag-icon-in"></span> Hindi'  value="en|hi">Hindi</option>
+                              <option  data-content='<span class="flag-icon flag-icon-hu"></span> Hungarian' value="en|hu">Hungarian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-is"></span> Icelandic' value="en|is">Icelandic</option>
+                              <option  data-content='<span class="flag-icon flag-icon-id"></span> Indonesian' value="en|id">Indonesian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ga"></span> Irish' value="en|ga" >Irish</option>
+                              <option  data-content='<span class="flag-icon flag-icon-it"></span> Italian' value="en|it">Italian</option>         
+                              <option  data-content='<span class="flag-icon flag-icon-lv"></span> Latvian' value="en|lv">Latvian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-lt"></span> Lithuanian'  value="en|lt">Lithuanian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-mk"></span> Macedonian' value="en|mk">Macedonian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ms"></span> Malay' value="en|ms">Malay</option>
+                              <option  data-content='<span class="flag-icon flag-icon-mt"></span> Maltese' value="en|mt">Maltese</option>
+                              <option data-content='<span class="flag-icon flag-icon-pt"></span> Português' value="en|pt">Português</option>
+                          
+                              <option  data-content='<span class="flag-icon flag-icon-no"></span> Norwegian' value="en|no">Norwegian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ro"></span> Romanian' value="en|ro">Romanian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ru"></span> Russian'  value="en|ru">Russian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-sr"></span> Serbian' value="en|sr">Serbian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-es"></span> Spanish' value="en|es">Spanish</option>
+                              <option  data-content='<span class="flag-icon flag-icon-sv"></span> Swedish' value="en|sv">Swedish</option>
+                              <option  data-content='<span class="flag-icon flag-icon-th"></span> Thai' value="en|th">Thai</option>
+                              <option  data-content='<span class="flag-icon flag-icon-tr"></span> Turkish' value="en|tr">Turkish</option>
+                              <option  data-content='<span class="flag-icon flag-icon-ua"></span> Ukrainian'  value="en|uk">Ukrainian</option>
+                              <option  data-content='<span class="flag-icon flag-icon-pk"></span> Urdu' value="en|ur">Urdu</option>
+                              <option  data-content='<span class="flag-icon flag-icon-vi"></span> Vietnamese' value="en|vi">Vietnamese</option>
+                              <option  data-content='<span class="flag-icon flag-icon-cy"></span> Welsh'  value="en|cy">Welsh</option>
+                           </select>
+                         <div id="google_translate_element2" style="display:none"></div>
+                       </div>                    </div>
+                </div>
+                <!--end col-->
+
+                <div class="pt-2 mt-4 col-lg-6 col-md-5 mt-sm-0 pt-sm-0">
+                    <div class="position-relative">
+                        <img src="{% static 'img/bg1.png' %}" class="mx-auto roundedd img-fluid d-block" alt="">
+                    </div>
+                </div>
+                <!-- TradingView Widget BEGIN -->
+                <center>
+                    <div class="caption-title"><strong>Forex Cross </strong> Rates</div>
+                </center>
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="" rel="noopener" target="_blank"><span
+                            class="blue-text"></span></a></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+                        {
+                            "width": "100%",
+                            "height": "600",
+                            "currencies": [
+                                "EUR",
+                                "USD",
+                                "JPY",
+                                "GBP",
+                                "CHF",
+                                "AUD",
+                                "CAD",
+                                "NZD",
+                                "CNY"
+                            ],
+                            "isTransparent": true,
+                            "colorTheme": "light",
+                            "locale": "en"
+                        }
+                    </script>
+                </div>
+
+                <center>
+                    <div class="caption-title"><strong>Forex Heat </strong> Map</div>
+                </center>
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="" rel="noopener" target="_blank"><span
+                            class="blue-text"></span></a></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+                        {
+                            "width": "100%",
+                            "height": "600",
+                            "currencies": [
+                                "EUR",
+                                "USD",
+                                "JPY",
+                                "GBP",
+                                "CHF",
+                                "AUD",
+                                "CAD",
+                                "NZD",
+                                "CNY"
+                            ],
+                            "isTransparent": true,
+                            "colorTheme": "light",
+                            "locale": "en"
+                        }
+                    </script>
+                    <!--end col-->
+                </div>
+                <!--end row-->
+            </div>
+            <!--end container-->
+    </section>
+    <!--end section-->
+    <!-- Hero End -->
+
+    <!-- TradingView Widget BEGIN -->
+    <div style="height:62px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #FFFFFF; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; padding:1px;padding: 0px; margin: 0px; width: 100%;">
+        <div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+        <div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+        </div>
+    </div>
+    <!-- TradingView Widget END -->
+
+    <!-- Security Section Start -->
+    <section class="overflow-hidden section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center col-12">
+                    <div class="pb-2 mb-4 section-title">
+
+                        <h4 class="mb-4 title">Security Comes First</h4>
+
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+
+            <div class="row">
+                <div class="pt-2 mt-4 col-md-6 col-12">
+                    <div class="text-center border-0 rounded card">
+                        <div class="card-body">
+                            <div class="p-3 shadow bg-soft-primary roundedd d-inline-block">
+                                <img src="{% static 'temp/images/icon/key.svg' %}" class="avatar avatar-small" alt="">
+                            </div>
+                            <div class="mt-4">
+                                <h5><a href="javascript:void(0)" class="text-dark">Security</a></h5>
+                                <p class="mt-3 mb-0 text-muted">IBCOINEX LIMITED uses the highest levels of Internet Security, and it is secured by 256 bits SSL security encryption to ensure that your information is completely protected from fraud.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+
+                <div class="pt-2 mt-4 col-md-6 col-12">
+                    <div class="text-center border-0 rounded card">
+                        <div class="card-body">
+                            <div class="p-3 shadow bg-soft-primary roundedd d-inline-block">
+                                <img src="{% static 'temp/images/icon/locked.svg' %}" class="avatar avatar-small" alt="">
+                            </div>
+                            <div class="mt-4">
+                                <h5><a href="javascript:void(0)" class="text-dark">Two Factor Auth</a></h5>
+                                <p class="mt-3 mb-0 text-muted">Two-factor authentication (2FA) by default on all Online Trade accounts, to securely protect you from unauthorised access and impersonation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+
+    <!-- End Security Section Start -->
+
+    <!-- Features Section Start -->
+    <section class="overflow-hidden section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center col-lg-7 col-md-7">
+                    <div class="pb-2 mb-4 section-title">
+
+                        <h4 class="mb-4 title "> Explore Our Services</h4>
+                        <p class="mx-auto mb-0 text-muted para-desc">It’s our mission to provide you with a delightful and a successful trading experience!</p>
+                    </div>
+                </div>
+                <!--end col-->
+
+            </div>
+            <!--end row-->
+
+
+            <!--end col-->
+
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-8 col-md-8">
+                    <div class="pt-2 mt-4 row">
+                        <div class="col-md-6 col-12">
+                            <div class="pt-4 pb-4 media features">
+                                <div class="mt-2 mr-3 text-center icon rounded-circle text-primary">
+                                    <i data-feather="activity" class="fea icon-ex-md text-primary"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="title"> Powerful Trading Platforms</h4>
+                                    <p class="mb-0 text-muted para">IBCOINEX LIMITED offers multiple platform options to cover the needs of each type of trader and investors .</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-md-6 col-12">
+                            <div class="pt-4 pb-4 media features">
+                                <div class="mt-2 mr-3 text-center icon rounded-circle text-primary">
+                                    <i data-feather="credit-card" class="fea icon-ex-md text-primary"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="title">High leverage</h4>
+                                    <p class="mb-0 text-muted para">Chance to magnify your investment and really win big with super-low spreads to further up your profits</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-md-6 col-12">
+                            <div class="pt-4 pb-4 media features">
+                                <div class="mt-2 mr-3 text-center icon rounded-circle text-primary">
+                                    <i data-feather="zap" class="fea icon-ex-md text-primary"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="title">Fast execution</h4>
+                                    <p class="mb-0 text-muted para">Super-fast trading software, so you never suffer slippage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-md-6 col-12">
+                            <div class="pt-4 pb-4 media features">
+                                <div class="mt-2 mr-3 text-center icon rounded-circle text-primary">
+                                    <i data-feather="shield" class="fea icon-ex-md text-primary"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="title">Ultimate Security</h4>
+                                    <p class="mb-0 text-muted para">With advanced security systems, we keep your account always protected.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-md-6 col-12">
+                            <div class="pt-4 pb-4 media features">
+                                <div class="mt-2 mr-3 text-center icon rounded-circle text-primary">
+                                    <i data-feather="message-circle" class="fea icon-ex-md text-primary"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="title">24/7 live chat Support</h4>
+                                    <p class="mb-0 text-muted para">Connect with our 24/7 support and Market Analyst on-demand.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end col-->
+
+
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end col-->
+
+                <div class="pt-2 mt-4 text-center col-lg-4 col-md-4 col-12 text-md-right">
+                    <img src="{% static 'temp/images/app/phone.png' %}" class="img-fluid" alt="">
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!-- End Features Section Start -->
+
+
+    <!-- INv Section Start -->
+    <section class="overflow-hidden section bg-soft-primary">
+        <div class="container mt-100 mt-60 ">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <img src="{% static 'temp/images/app/laptop.png' %}" class="img-fluid " alt="">
+                </div>
+                <!--end col-->
+
+                <div class="pt-2 mt-4 col-lg-6 col-md-6 mt-sm-0 pt-sm-0">
+                    <div class="section-title ml-lg-5">
+                        <h4 class="mb-4 title">Always on the go? Mobile trading is easier than ever with IBCOINEX LIMITED
+                        </h4>
+                        <p class="text-muted">Get your hands on our customized Trading Platform with the comfort of freely trading on the move, to experience truly liberating trading sessions.</p>
+
+                        <a href="http://IBCOINEX.ltd/about" class="mt-3 h6 text-primary">Find Out More <i
+                                class="mdi mdi-chevron-right"></i></a>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!-- INv Section Start -->
+
+    <center>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener" async>
+                {
+                    "width": "1400",
+                    "height": "1000",
+                    "defaultColumn": "overview",
+                    "screener_type": "crypto_mkt",
+                    "displayCurrency": "USD",
+                    "colorTheme": "light",
+                    "locale": "en"
+                }
+            </script>
+        </div>
+    </center>
+    <!-- TradingView Widget END -->
+    <!-- Pricing Section Start -->
+    <section class="mt-4 overflow-hidden section" id="pricing">
+        <div class="container mt-100 mt-60">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="pb-2 mb-4 text-center section-title">
+                        <h4 class="mb-4 title"><span class="text-primary">Our Investment Packages</span></h4>
+                        <p class="mx-auto mb-0 para-desc text-muted">Choose how you want to invest with us</p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+
+            <div class="row">
+
+                <div class="pt-2 mt-4 col-lg-4 col-md-6">
+                    <div class="p-4 border-0 rounded-md shadow card pricing-rates business-rate">
+                        <div class="p-0 card-body">
+                            <span class="px-4 py-2 mb-0 rounded-lg d-inline-block bg-soft-primary h6 text-primary">BASIC</span>
+                            <h2 class="mt-3 mb-0 font-weight-bold">$ 50
+                            </h2>
+                            <p class="text-muted">1 Days</p>
+
+
+
+                            <ul class="pt-3 list-unstyled border-top">
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Min. Possible deposit: $50
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Max. Possible deposit: $499
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$60 Minimum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$589 Maximum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$0 Gift Bonus</li>
+                            </ul>
+
+                            <div class="mt-4">
+                                <a href="login" class="btn btn-block btn-primary">Buy Now</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+                <div class="pt-2 mt-4 col-lg-4 col-md-6">
+                    <div class="p-4 border-0 rounded-md shadow card pricing-rates business-rate">
+                        <div class="p-0 card-body">
+                            <span class="px-4 py-2 mb-0 rounded-lg d-inline-block bg-soft-primary h6 text-primary">STANDARD</span>
+                            <h2 class="mt-3 mb-0 font-weight-bold">$ 500
+                            </h2>
+                            <p class="text-muted">2 Days</p>
+
+
+
+                            <ul class="pt-3 list-unstyled border-top">
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Min. Possible deposit: $500
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Max. Possible deposit: $999
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$750 Minimum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$1499 Maximum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$0 Gift Bonus</li>
+                            </ul>
+
+                            <div class="mt-4">
+                                <a href="login" class="btn btn-block btn-primary">Buy Now</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+                <div class="pt-2 mt-4 col-lg-4 col-md-6">
+                    <div class="p-4 border-0 rounded-md shadow card pricing-rates business-rate">
+                        <div class="p-0 card-body">
+                            <span class="px-4 py-2 mb-0 rounded-lg d-inline-block bg-soft-primary h6 text-primary">EXCLUSIVE</span>
+                            <h2 class="mt-3 mb-0 font-weight-bold">$ 1000
+                            </h2>
+                            <p class="text-muted">3 Days</p>
+
+
+
+                            <ul class="pt-3 list-unstyled border-top">
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Min. Possible deposit: $1000
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Max. Possible deposit: $4999
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$1800 Minimum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$8998 Maximum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$0 Gift Bonus</li>
+                            </ul>
+
+                            <div class="mt-4">
+                                <a href="login" class="btn btn-block btn-primary">Buy Now</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+                <div class="pt-2 mt-4 col-lg-4 col-md-6">
+                    <div class="p-4 border-0 rounded-md shadow card pricing-rates business-rate">
+                        <div class="p-0 card-body">
+                            <span class="px-4 py-2 mb-0 rounded-lg d-inline-block bg-soft-primary h6 text-primary">ENTERPRISE</span>
+                            <h2 class="mt-3 mb-0 font-weight-bold">$ 5000
+                            </h2>
+                            <p class="text-muted">4 Days</p>
+
+
+
+                            <ul class="pt-3 list-unstyled border-top">
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Min. Possible deposit: $5000
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>Max. Possible deposit: $1160000
+                                </li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$10000 Minimum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$2320000 Maximum return</li>
+                                <li class="mb-0 h6 text-muted"><span class="mr-2 text-primary h5"><i
+                                                class="align-middle uil uil-check-circle"></i></span>$0 Gift Bonus</li>
+                            </ul>
+
+                            <div class="mt-4">
+                                <a href="login" class="btn btn-block btn-primary">Buy Now</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!-- End Pricing Section Start -->
+
+
+    <!-- Crypto price Section Start -->
+
+    <section class="mt-5 overflow-hidden section bg-soft-primary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="text-center col-12">
+                    <div class="pb-2 mb-4 section-title">
+                        <h4 class="mb-4 title">Cryptocurrency</h4>
+                        <p class="mx-auto mb-0 text-muted para-desc">
+                            Trade and invest Top Cryptocurrency</p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="market-box ">
+                        <div class="market-content">
+                            <coingecko-coin-ticker-widget coin-id="bitcoin" currency="usd" width="0" locale="en" background-color="#01395e"></coingecko-coin-ticker-widget>
+                        </div>
+
+                        <!--pattern end-->
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="market-box">
+                        <div class="market-content">
+                            </script>
+                            <coingecko-coin-ticker-widget coin-id="ethereum" currency="usd" width="0" locale="en" background-color="#01395e"></coingecko-coin-ticker-widget>
+                        </div>
+                        <!--pattern start-->
+
+                        <!--pattern end-->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="market-box">
+                        <div class="market-content">
+                            <coingecko-coin-ticker-widget coin-id="litecoin" currency="usd" width="0" locale="en" background-color="#01395e"></coingecko-coin-ticker-widget>
+                        </div>
+                        <!--pattern start-->
+
+                        <!--pattern end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crypto price Section Start  End-->
+
+
+    <!-- Testimonial Section Start -->
+    <section class="mt-5 overflow-hidden section">
+        <div class="container mt-100 mt-60">
+            <div class="row justify-content-center">
+                <div class="text-center col-12">
+                    <div class="pb-2 mb-4 section-title">
+                        <h4 class="mb-4 title">What our Customer says!</h4>
+                        <p class="mx-auto mb-0 text-muted para-desc">Don&#039;t take our word for it, here&#039;s what some of our clients have to say about us</p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+
+            <div class="mt-4 row justify-content-center">
+                <div class="col-lg-8 col-12">
+                    <div id="single-owl" class="owl-carousel owl-theme">
+                        <!-- Review Start -->
+                        <div class="m-2 overflow-hidden border-0 card roundedd">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col-md-5">
+                                    <img src="{% static 'app/public/photos/RJA2X75MXgolnkRUsPYDMFzSy9He7FLhabJnV8BO.jpg" class="img-fluid w-75" alt="">
+                                </div>
+                                <!--end col-->
+
+                                <div class="col-md-7">
+                                    <div class="card-body customer-testi">
+                                        <h6 class="text-primary font-weight-bold">Lee mzcha<small class="text-muted d-block">INVESTOR</small></h6>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                        </ul>
+                                        <p class="mb-0 text-muted h6 font-italic">"I use to think that all these are not real Until now. I&#039;m happy that i tried it out"</p>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            </div>
+                            <!--end row-->
+                        </div>
+                        <!-- Review End -->
+                        <!-- Review Start -->
+                        <div class="m-2 overflow-hidden border-0 card roundedd">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col-md-5">
+                                    <img src="{% static 'app/public/photos/MCw1yaXsWFLPRY7tEIORQ0Rwla4rYnUu5zE5dMij.jpg" class="img-fluid w-75" alt="">
+                                </div>
+                                <!--end col-->
+
+                                <div class="col-md-7">
+                                    <div class="card-body customer-testi">
+                                        <h6 class="text-primary font-weight-bold">Jason Smith<small class="text-muted d-block">INVESTOR</small></h6>
+                                        <ul class="mb-0 list-unstyled">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i>
+                                            </li>
+                                        </ul>
+                                        <p class="mb-0 text-muted h6 font-italic">"I&#039;m the happiest person on earth right now. i just got my first return. Thanks sir."</p>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            </div>
+                            <!--end row-->
+                        </div>
+                        <!-- Review End -->
+
+                        <!-- Review Start -->
+
+                    </div>
+                    <!-- Review End -->
+                </div>
+                <!--end owl-fade-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+
+    <!--End Testimonial Section  -->
+
+    <!-- Sign up Section Start -->
+    <section class="overflow-hidden section mt-60 bg-soft-primary">
+        <div class="container">
+            <div class="p-4 roundedd bg-primary p-lg-5">
+                <div class="row align-items-end">
+                    <div class="col-md-8">
+                        <div class="text-center section-title text-md-left">
+                            <h4 class="mb-3 text-white title title-dark">The Better Way to Trade &amp; Invest</h4>
+                            <p class="mb-0 text-white">IBCOINEX LIMITED helps over 2 million customers achieve their financial goals by helping them trade and invest with ease</p>
+                        </div>
+                    </div>
+                    <!--end col-->
+
+                    <div class="mt-4 col-md-4 mt-sm-0">
+                        <div class="text-center text-md-right">
+                            <a href="{% url 'accounts:register' %}" class="pt-3 pb-3 pl-4 pr-4 btn btn-light">Create Free
+                                Account</a>
+                        </div>
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
+            </div>
+        </div>
+        <!--end container-->
+    </section>
+    <!-- End Sign up Section  -->
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="pb-0 mb-0 col-lg-4 col-12 mb-md-4 pb-md-2">
+                    <h5 class="text-light footer-head">IBCOINEX LIMITED</h5>
+                    <p class="mt-4">We are online</p>
+
+                    <ul class="mt-4 mb-0 list-unstyled social-icon social">
+                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
+                                    data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
+                                    data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
+                                    data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+                    </ul>
+                    <!--end icon-->
+
+                </div>
+                <!--end col-->
+
+                <div class="pt-2 mt-4 col-lg-4 col-md-4 mt-sm-0 pt-sm-0">
+                    <h5 class="text-light footer-head">Useful Links</h5>
+                    <ul class="mt-4 list-unstyled footer-list">
+                        <li><a href="{% url 'home' %}" class="text-foot"><i class="mr-1 mdi mdi-chevron-right"></i>
+                                Home</a></li>
+                        <li><a href="{% url 'about' %}" class="text-foot"><i class="mr-1 mdi mdi-chevron-right"></i>
+                                About us</a></li>
+                        <li><a href="{% url 'contact_us' %}" class="text-foot"><i class="mr-1 mdi mdi-chevron-right"></i>
+                                Contact Us</a></li>
+                        
+                    </ul>
+                </div>
+                <!--end col-->
+
+                <div class="pt-2 mt-4 col-lg-4 col-md-4 mt-sm-0 pt-sm-0">
+                    <h5 class="text-light footer-head">Contact Details</h5>
+                    <div class="mt-2">
+                        <h6 class="text-foot"><i class="mr-1 mdi mdi-home"> </i> Head Office</h6>
+                        <p>865678 WATER VIEW LONDON, UK</p>
+                        <h6><i class="mr-1 mdi mdi-email"> </i>Email Address</h6>
+                        <p>info@ibcoinex.ltd</p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </footer>
+
+    <!--end footer-->
+    <footer class="footer footer-bar">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="text-sm-left">
+                        <p class="mb-0">
+                            © Copyright 2023 IBCOINEX LIMITED All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </footer>
+    <!--end footer-->
+    <!-- Footer End -->
+
+
+
+    <!-- javascript -->
+    <script src="{% static 'temp/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'temp/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- SLIDER -->
+    <script src="{% static 'temp/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'temp/js/owl.init.js' %}"></script>
+    <!-- Icons -->
+    <script src="{% static 'temp/js/feather.min.js' %}"></script>
+    <script src="{% static 'temp/js/bundle.js' %}"></script>
+
+    <script src="{% static 'temp/js/app.js' %}"></script>
+    <script src="{% static 'temp/js/widget.js' %}"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+</body>
+        <script type="text/javascript">
+            function googleTranslateElementInit2() {
+            new google.translate.TranslateElement({pageLanguage: 'en',autoDisplay: false}, 'google_translate_element2');}
+        </script>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+        <script type="text/javascript">
+            eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',43,43,'||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'),0,{}))
+            $(function(){
+                        $('.selectpicker').selectpicker();
+                    });
+        </script>
+
+</html>
+                        <div id="google_translate_element"></div>

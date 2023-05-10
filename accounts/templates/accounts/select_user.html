@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Send Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #F7F9FC;
+      }
+      h1 {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        color: #07074D;
+        margin-bottom: 32px;
+      }
+      form {
+        width: 100%;
+        max-width: 550px;
+        padding: 32px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+      }
+      label {
+        color: #07074D;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 8px;
+        display: block;
+      }
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 1px solid #DDE3EC;
+        background: #FFFFFF;
+        font-weight: 500;
+        font-size: 16px;
+        color: #07074D;
+        outline: none;
+        resize: none;
+      }
+      select::placeholder,
+      textarea::placeholder {
+        color: #536387;
+      }
+      select:focus,
+      textarea:focus {
+        border-color: #6A64F1;
+      }
+      select:focus + label,
+      textarea:focus + label {
+        color: #6A64F1;
+      }
+      button[type="button"] {
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 12px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #6A64F1;
+        color: white;
+        cursor: pointer;
+        margin-top: 25px;
+      }
+      button[type="button"]:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select a User</h1>
+    <form>
+      <label for="user-select">Select a user:</label>
+      <select id="user-select" name="user">
+        {% for user in users %}
+          <option value="{{ user.email }}">{{ user.full_name }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="message-input">Message:</label>
+      <textarea id="message-input" name="message" placeholder="Type your message here"></textarea>
+
+      <button type="button" onclick="sendEmail()">Send Email</button>
+    </form>
+          <button type="button" onclick="goBack()">Go Back</button>
+
+
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+
+      
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail() {
+    const userEmail = document.getElementById('user-select').value;
+    const message = document.getElementById('message-input').value;
+    const subject = "Confirmation from IBcoinex";
+    const body = message;
+
+    Email.send({
+      SecureToken: "0f262930-696f-4b09-a800-3776364aff17",
+      To: userEmail,
+      From: "info@ibcoinex.org",
+      Subject: subject,
+      Body: '<table style="width:100%;max-width:600px;margin:auto;font-family:Arial, sans-serif;font-size:16px;line-height:1.4;color:#333333;">' +
+              '<tr style="background-color:#00308F;color:white;font-size:20px;font-weight:bold;text-align:center;"><td colspan="2" style="padding:20px;"><img src="https://clipground.com/images/png-logos-1.png" alt="IBcoinex Logo" style="width:150px;height:auto;"></td></tr>' +
+              '<tr><td colspan="2" style="padding:20px;"><p>Dear Valued Customer,</p><p>' + body + '</p><p>Thank you for choosing IBcoinex as your preferred trading platform. Should you have any questions, please do not hesitate to contact us.</p><p>Best regards,</p><p>The IBcoinex Team</p></td></tr>' +
+              '<tr style="background-color:#f2f2f2;"><td style="padding:20px;text-align:center;"><img src="https://clipground.com/images/png-logos-1.png" alt="Phone Icon" style="width:30px;height:auto;"><br><br><p style="font-size:18px;font-weight:bold;">Contact Us</p><p style="margin-bottom:5px;"></p><p>Email: info@ibcoinex.org</p></td></tr>' +
+            '</table>'
+    }).then(
+      message => alert("Email sent successfully!")
+    );
+  }
+</script>
+
