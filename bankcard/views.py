@@ -67,7 +67,6 @@ def card_approval(request, card_request_id):
 
 
 
-
 @login_required
 def user_cards(request):
     card_details = CardDetails.objects.filter(user=request.user).order_by('timestamp')
