@@ -45,7 +45,6 @@
     font-family: 'FontAwesome';
     font-style: normal;
     font-weight: normal;
-    src: url('../fonts/fontawesome-webfont3e6e-v=4.7.0.woff') format('woff'),url('../fonts/fontawesome-webfont3e6e-v=4.7.0.svg#fontawesomeregular') format('svg'):
 }
 
 [class^="fa-"]:before, [class*=" fa-"]:before {
