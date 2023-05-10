@@ -247,7 +247,6 @@ a.active.selector-clearall:focus, a.active.selector-clearall:hover {
 }
 
 .selector .help-icon {
-    background: url(../img/icon-unknown.svg) 0 0 no-repeat;
     display: inline-block;
     vertical-align: middle;
     margin: -2px 0 0 2px;
@@ -256,11 +255,9 @@ a.active.selector-clearall:focus, a.active.selector-clearall:hover {
 }
 
 .selector .selector-chosen .help-icon {
-    background: url(../img/icon-unknown-alt.svg) 0 0 no-repeat;
 }
 
 .selector .search-label-icon {
-    background: url(../img/search.svg) 0 0 no-repeat;
     display: inline-block;
     height: 25px;
     width: 25px;
