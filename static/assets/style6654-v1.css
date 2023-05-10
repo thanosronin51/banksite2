@@ -888,7 +888,6 @@ footer {
 
     footer:before {
         content: '';
-        background-image: url("../images/curve-footer.svg");
         background-position: center bottom;
         background-repeat: no-repeat;
         /*background-size: 112%;*/
