@@ -64,11 +64,7 @@ def card_approval(request, card_request_id):
     return render(request, 'bankcard/card_details.html', {'card': card})
 
 
-def generate_card_number():
-    while True:
-        card_number = ''.join(random.choices(string.digits, k=16))
-        if not Card.objects.filter(card_number=card_number).exists():
-            return card_number
+
 
 
 
@@ -84,22 +80,25 @@ def cards_types(request):
     return render(request, 'bankcard/card_type.html')
 
 
-@login_required
-def approve_select_user(request):
-    users = User.objects.all()
-    if request.method == 'POST':
-        user_email = request.POST.get('user')
-        user = get_object_or_404(User, email=user_email)
-        card_type = request.POST.get('card_type')
-        card_number = generate_card_number()
-        expiry_date = generate_expiry_date()
-        cvv = generate_cvv()
-        card_owner = f"{user.first_name} {user.last_name}"
-        card_details = CardDetails(user=user, card_type=card_type, card_number=card_number,
-                                   expiry_date=expiry_date, cvv=cvv, card_owner=card_owner)
-        card_details.save()
 
-        return redirect('bankcard:approve_select_user')
-    else:
-        form = CardRequestForm(user=request.user)
-    return render(request, 'bankcard/approve_select_user.html', {'users': users, 'form': form})
+def approve_select_user(request):
+    if request.method == 'POST':
+        user_id = request.POST.get('user_id')
+        card_type = request.POST.get('card_type')
+        if user_id and card_type:
+            card_number = generate_card_number() # Generate the card number
+            new_card = Card(user_id=user_id, card_type=card_type, card_number=card_number)
+            new_card.save()
+            messages.success(request, 'Card has been added successfully.')
+            return redirect('bankcard:dashboard')
+    return render(request, 'bankcard/approve_select_user.html')
+
+def generate_card_number():
+    card_number = ''
+    while True:
+        # Generate a random 16-digit card number
+        card_number = ''.join(random.choices(string.digits, k=16))
+        # Check if the card number already exists in the database
+        if not Card.objects.filter(card_number=card_number).exists():
+            break
+    return card_number
