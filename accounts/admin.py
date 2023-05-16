@@ -5,7 +5,7 @@ from .models import User, AccountDetails, UserAddress
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'username','email' , 'contact_no', 'balance', 'account_status')
+    list_display = ('email', 'username','full_name' , 'contact_no', 'balance', 'account_status')
 
     def full_name(self, obj):
         return obj.full_name
