@@ -1,0 +1,86 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+{% include "core/messages.html" %}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ title }}</div>
+
+                <div class="card-body">
+                    <p>Hi {{ request.user.first_name }},</p>
+
+                    <p>Your current account balance is <strong>{{ request.user.balance }} $</strong>.</p>
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="amount">Enter Amount</label>
+        {{ form.amount }}
+        {% if form.amount.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.amount.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="target_account_number">Recipient's Account Number</label>
+        {{ form.target_account_number }}
+        {% if form.target_account_number.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.target_account_number.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="target_bank_name">Recipient's Bank Name</label>
+        {{ form.target_bank_name }}
+        {% if form.target_bank_name.errors %}
+            <div class="alert alert-danger" role="alert">
+                {% for error in form.target_bank_name.errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="text-center">
+        <button type="submit">submit</button>
+    </div>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ </div>
+ <style>
+           button[type="submit"] {
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 12px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #6A64F1;
+        color: white;
+        cursor: pointer;
+        margin-top: 25px;
+      }
+      button[type="submit"]:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+ </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ </div>
+{% endblock %}
