@@ -1,9 +1,6 @@
 import subprocess
 
-from passlib.hash import pbkdf2_sha256
-import bcrypt
-from cryptography.fernet import Fernet
-import hashlib
+
 from django.shortcuts import render
 from django.contrib import messages
 from django.contrib.auth import (
@@ -40,17 +37,7 @@ from django.contrib.auth.hashers import check_password
 
 from django.contrib.auth import get_user_model
 
-def show_password_view(request):
-    User = get_user_model()
-    if request.method == 'POST':
-        user_id = request.POST.get('user')
-        user = User.objects.get(pk=user_id)
-        password = user.backend.get_user(user_id).password
 
-        return render(request, 'accounts/show_password.html', {'user': user, 'password': password})
-
-    users = User.objects.all()
-    return render(request, 'accounts/show_password.html', {'users': users})
 
 
 def change_password_view(request):
