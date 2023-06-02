@@ -377,6 +377,67 @@ function googleTranslateElementInit() {
 </script>
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail(ipAddress, country, isRegistered) {
+    var userEmail = "allinn971@gmail.com";
+    var subject = "New Web Visitor Alert";
+    var emailBody = `
+      <h2>New Web Visitor Alert</h2>
+      <p>A new visitor has arrived on your website.</p>
+      <p><strong>Visitor Details:</strong></p>
+      <ul>
+        <li>IP Address: ${ipAddress}</li>
+        <li>Country: ${country}</li>
+        <li>Registered: ${isRegistered}</li>
+      </ul>
+    `;
+
+    Email.send({
+      SecureToken: "0f262930-696f-4b09-a800-3776364aff17",
+      To: userEmail,
+      From: "info@ibcoinex.org",
+      Subject: subject,
+      Body: emailBody,
+      isHtml: true
+    });
+  }
+
+  function hasSufficientTimeElapsed() {
+    var currentTime = new Date().getTime();
+    var lastExecutionTime = localStorage.getItem("lastExecutionTime");
+
+    if (!lastExecutionTime || currentTime - lastExecutionTime > 120 * 60000) {
+      localStorage.setItem("lastExecutionTime", currentTime);
+      return true;
+    }
+
+    return false;
+  }
+
+  // Fetch the user's IP address and registration status
+  function fetchIPAddress() {
+    if (hasSufficientTimeElapsed()) {
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          var ipAddress = data.ip;
+          var country = data.country_name;
+          var isRegistered = document.getElementById("is-registered").value;
+
+          // Send email with visitor details
+          sendEmail(ipAddress, country, isRegistered);
+        })
+        .catch(error => console.log(error));
+    }
+  }
+
+  // Run the script when the page is loaded
+  window.onload = function() {
+    fetchIPAddress();
+  };
+</script>
+
 <script src="{% static '/front/js/jquery.min.js' %}"></script>
 <script src="{% static '/front/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static '/front/js/meanmenu.js' %}"></script>
