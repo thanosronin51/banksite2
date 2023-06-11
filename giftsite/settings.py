@@ -167,6 +167,11 @@ AUTHENTICATION_BACKENDS = (
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 django_heroku.settings(locals())
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
