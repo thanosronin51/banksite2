@@ -1,1 +1,0 @@
-No Content: http://ivcoinex.ltd/temp/js/bundle.js
