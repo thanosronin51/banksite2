@@ -48,8 +48,9 @@ INSTALLED_APPS = [
     'accounts',
     'rest_framework',
     'corsheaders',
-    'storages',
-    'ckeditor'
+    'ckeditor',
+    'storages'
+    
 ]
 
 MIDDLEWARE = [
@@ -168,4 +169,4 @@ AUTHENTICATION_BACKENDS = (
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 django_heroku.settings(locals())
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
