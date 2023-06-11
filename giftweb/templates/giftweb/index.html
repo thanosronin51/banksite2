@@ -1,0 +1,163 @@
+
+{% extends 'giftweb/base.html' %}
+
+{% block title %}
+    GiftWeb - Home
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+    <main class="wrapper">
+        <section class="carousel">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/ios/itunes/itunes-store-giftcard-2col.png" class="d-block w-100" alt="Dhurat&euml; q&euml; ja Vlen!">
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="http://callistasramblings.com/wp-content/uploads/2015/12/Netflix-gift-cards-1024x601.png" class="d-block w-100" alt="Citizen">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.mos.cms.futurecdn.net/inrZFmnKaQxZCFLnb5gjsb.jpg" class="d-block w-100" alt="Jacques Lemans">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section><!-- wrapper&carousel-end ./ -->
+
+
+
+
+<section class="products pm">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <article class="title text-center">
+                    <h2 class="title-sec">Products</h2>
+                    <p class="sub-title">Prefered <i class="uil uil-list-ui-alt"></i></p>
+                </article>
+            </div>
+        </div>
+<div class="row">
+    {% for product in products %}
+        <div class="col-lg-4 col-md-6">
+            <div class="product-item discount">
+                <div class="product-item-inner">
+                    {% if product.discount %}
+                        <span class="discount">-{{ product.discount }}%</span>
+                    {% endif %}
+                    <a href="{% url 'giftweb:product_detail' product.id %}" class="link">
+                        <figure class="img-box">
+                            <img src="{{ product.image.url }}" alt="Ore Quantum PWG927.650">
+                        </figure>
+                    </a>
+                    <div class="details">
+                        <span class="cat"><i class="uil uil-tag-alt"></i> {{ product.name }}</span>
+                        <a href="{% url 'giftweb:product_detail' product.id %}" class="link">
+                            <h5 class="title">Ore {{ product.name }}</h5>
+                        </a>
+                        <div class="star">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <h4 id="remaining-time{{ product.id }}"></h4>
+                        </div>
+                        
+                        <a href="{% url 'giftweb:product_detail' product.id %}" class="go-to-cart">
+                            <i class="uil uil-shopping-bag shopping-cart cart"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- products-end ./ -->
+        
+        {% if forloop.counter|divisibleby:3 and not forloop.last %}
+            </div>
+            <div class="row">
+        {% endif %}
+        
+        <script>
+            // Countdown timer for each product
+            var remainingTimeElement{{ product.id }} = document.getElementById("remaining-time{{ product.id }}");
+
+            function updateRemainingTime{{ product.id }}() {
+                var remainingTime{{ product.id }} = "{{ product.remaining_days }}d {{ product.remaining_hours }}h {{ product.remaining_minutes }}m {{ product.remaining_seconds }}s";
+                var remainingTime = remainingTime{{ product.id }}.split(" ");
+
+                var days = parseInt(remainingTime[0]);
+                var hours = parseInt(remainingTime[1]);
+                var minutes = parseInt(remainingTime[2]);
+                var seconds = parseInt(remainingTime[3]);
+
+                var currentTime = new Date();
+                var remainingSeconds = days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60 + seconds;
+                var endTime = new Date(currentTime.getTime() + remainingSeconds * 1000);
+
+                function updateTimer() {
+                    var currentTime = new Date();
+                    var timeDifference = endTime - currentTime;
+
+                    if (timeDifference <= 0) {
+                        remainingTimeElement{{ product.id }}.textContent = "Expired";
+                    } else {
+                        var remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                        var remainingHours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var remainingMinutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                        var remainingSeconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                        remainingTimeElement{{ product.id }}.textContent = remainingDays + "d " + remainingHours + "h " + remainingMinutes + "m " + remainingSeconds + "s";
+                        setTimeout(updateTimer, 1000);
+                    }
+                }
+
+                updateTimer();
+            }
+
+            updateRemainingTime{{ product.id }}();
+        </script>
+    {% empty %}
+        <p>No products available.</p>
+    {% endfor %}
+</div>
+
+    </div>
+</section><!-- products-end ./ -->
+
+
+
+
+    </main><!-- main-body-end ./ -->
+
+{% endblock %}
+

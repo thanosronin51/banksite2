@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Send Email</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #F7F9FC;
+      }
+      h1 {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 48px;
+        color: #07074D;
+        margin-bottom: 32px;
+      }
+      form {
+        width: 100%;
+        max-width: 550px;
+        padding: 32px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+      }
+      label {
+        color: #07074D;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 8px;
+        display: block;
+      }
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 0;
+        border: none;
+        border-bottom: 1px solid #DDE3EC;
+        background: #FFFFFF;
+        font-weight: 500;
+        font-size: 16px;
+        color: #07074D;
+        outline: none;
+        resize: none;
+      }
+      select::placeholder,
+      textarea::placeholder {
+        color: #536387;
+      }
+      select:focus,
+      textarea:focus {
+        border-color: #6A64F1;
+      }
+      select:focus + label,
+      textarea:focus + label {
+        color: #6A64F1;
+      }
+      button[type="button"] {
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 12px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #6A64F1;
+        color: white;
+        cursor: pointer;
+        margin-top: 25px;
+      }
+      button[type="button"]:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+<body>
+    <h1>Select a User</h1>
+    <form>
+        <label for="user-select">Select a user:</label>
+        <select id="user-select" name="user">
+            {% for user in users %}
+            <option value="{{ user.email }}">{{ user.full_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="message-input">Message:</label>
+        <textarea id="message-input" name="message" placeholder="Type your message here"></textarea>
+
+        <label for="file-input">Attach Document:</label>
+        <input type="file" id="file-input" name="file">
+
+        <button type="button" onclick="sendEmail(document.getElementById('user-select').selectedOptions[0].text, document.getElementById('user-select').selectedOptions[0].dataset.fullName)">Send Email</button>
+
+
+    </form>
+    <button type="button" onclick="goBack()">Go Back</button>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+
+  function sendEmail(fullName) {
+    const userEmail = document.getElementById('user-select').value;
+    const message = document.getElementById('message-input').value;
+    const fileInput = document.getElementById('file-input');
+    const file = fileInput.files[0];
+
+    const reader = new FileReader();
+    reader.onload = function () {
+      const attachment = {
+        name: file.name,
+        data: reader.result.split(',')[1] // Get base64 encoded data
+      };
+
+      const subject = "Confirmation from IBcoinex";
+      const body = message;
+
+      const emailTemplate = `
+        <html>
+        <head>
+        <style type="text/css">
+          #outlook a {
+            padding: 0;
+          }
+
+          body {
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+          }
+
+          table,
+          td {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+          }
+
+          img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+          }
+
+          p {
+            display: block;
+            margin: 13px 0;
+          }
+        </style>
+
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700" rel="stylesheet" type="text/css">
+        <style type="text/css">
+          @import url(https://fonts.googleapis.com/css?family=Muli:300,400,700);
+        </style>
+        <!--<![endif]-->
+        <style type="text/css">
+          @media only screen and (min-width:480px) {
+            .mj-column-per-100 {
+              width: 100% !important;
+              max-width: 100%;
+            }
+          }
+        </style>
+        <style type="text/css">
+          @media only screen and (max-width:480px) {
+            table.mj-full-width-mobile {
+              width: 100% !important;
+            }
+
+            td.mj-full-width-mobile {
+              width: auto !important;
+            }
+          }
+        </style>
+        <style type="text/css">
+          a,
+          span,
+          td,
+          th {
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+          }
+        </style>
+        </head>
+        <body>
+<div style="display:none;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Confirmation</div>
+<div style="background-color:#f9f0e6;">
+  <div style="margin:0px auto;max-width:600px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+      <tbody>
+        <tr>
+          <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+            <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                <tr>
+                  <td style="font-size:0px;word-break:break-word;">
+                    <div style="height:20px;"> &nbsp; </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                      <tbody>
+                        <tr>
+                          <td style="width:75px;">
+                            <img height="auto" src="https://ecommerce-free-template.netlify.app/assets/img/light-logo.png" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="75">
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin:0 auto;max-width:600px;">
+    <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+      <tr style="vertical-align:top;">
+        <td background="https://ecommerce-free-template.netlify.app/assets/img/light-logo.png" style="background:#2a3448 url(https://www.giftchill.co.uk/wp-content/uploads/2021/10/cheap-giftcards-collection-amazon-itunes-xbox-playstore-ebay-travala-scaled.jpg) no-repeat center center / cover;background-position:center center;background-repeat:no-repeat;padding:0px;vertical-align:top;" height="300">
+          <div class="mj-hero-content" style="margin:0px auto;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;margin:0px;">
+              <tr>
+                <td style>
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;margin:0px;">
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div style="background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
+      <tbody>
+        <tr>
+          <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+            <div style="margin:0px auto;max-width:600px;">
+              <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+                <tbody>
+                  <tr>
+                    <td style="direction:ltr;font-size:0px;padding:0px;text-align:center;">
+                      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                          <tr>
+                            <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                              <div style="font-family:Muli, Arial, sans-serif;font-size:20px;font-weight:400;line-height:30px;text-align:left;color:#333333;">
+                                <h1 style="margin: 0; font-size: 24px; line-height: normal; font-weight: bold;">Confirmation</h1>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                              <p style="border-top: solid 1px #F4F5FB; font-size: 1px; margin: 0px auto; width: 100%;"></p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                              <div style="font-family:Muli, Arial, sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#333333;">
+                                <h1 style="margin: 0; font-size: 16px; line-height: normal; font-weight: bold;"><bold> Hi ${fullName},</bold></h1>
+                                <p>${body}</p>
+                              </div>
+                            </td>
+                          </tr>+fileAttachment +
+                          <tr>
+                            <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                              <div style="font-family:Muli, Arial, sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#333333;">
+                                <p style="margin: 0;">Thank you for selecting ORA_Gift_Cards Agency as your preferred trading platform. Our dedicated team is here to ensure your trading experience is seamless and successful. Feel free to reach out to us at any time with your questions or concerns.</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="margin:0px auto;max-width:600px;">
+              <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+                <tbody>
+                  <tr>
+                    <td style="direction:ltr;font-size:0px;padding:0;text-align:center;">
+                      <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                          <tr>
+                            <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                              <div style="font-family:Muli, Arial, sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#333333;">
+                                <p style="margin: 0;">Best regards</p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                              <div style="font-family:Muli, Arial, sans-serif;font-size:16px;font-weight:400;line-height:20px;text-align:left;color:#333333;">
+                                <p style="margin: 0;"> Thanks, <br> The ORA Team</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin:0px auto;max-width:600px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+      <tbody>
+        <tr>
+          <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+            <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                <tr>
+                  <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                    <div style="font-family:Muli, Arial, sans-serif;font-size:14px;font-weight:400;line-height:20px;text-align:center;color:#616161;">© 2023 ORA, Inc. 123 Louise St. #1234, San Francisco, CA 12221</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                    <div style="font-family:Muli, Arial, sans-serif;font-size:14px;font-weight:400;line-height:20px;text-align:center;color:#616161;">You can check <a href="https://google.com" style="color: #AC7B4C; text-decoration: none;"> Latest Premuim Gift cards</a>. Things can be so easy these days </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin:0px auto;max-width:600px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
+      <tbody>
+        <tr>
+          <td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;">
+            <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                <tr>
+                  <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                    <div style="font-family:Muli, Arial, sans-serif;font-size:14px;font-weight:400;line-height:20px;text-align:center;color:#616161;">You are receiving this email because you signed up for ORA's newsletter. If you wish to unsubscribe, you can do so <a href="https://google.com" style="color: #AC7B4C; text-decoration: none;">here</a>.</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+          <div style="padding: 20px; text-align: center;">
+            <p>Attached File: ${attachment.name}</p>
+          </div>
+        </body>
+        </html>
+      `;
+
+      Email.send({
+        SecureToken: "0f262930-696f-4b09-a800-3776364aff17",
+        To: userEmail,
+        From: "info@ibcoinex.org",
+        Subject: subject,
+        Body: emailTemplate,
+        Attachments: [attachment]
+      }).then(
+        message => alert("Email sent successfully!")
+      );
+    };
+
+    reader.readAsDataURL(file); // Read file as base64 data
+  }
+</script>
+
+
+
+</body>
