@@ -1,0 +1,136 @@
+{% extends 'giftweb/base.html' %}
+
+{% block title %}
+    Contact |US
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+    <main class="wrapper">
+        <section class="hero contact-hero">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2>#Contact Us</h2>
+                    <p>
+                        For any request, clarification or criticism you can contact us directly by phone or you can write to us by e-mail by filling out the following form!
+                    </p>
+                </div>
+            </div>
+        </section><!-- hero ./ -->
+
+        <section class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 details">
+                        <span>Get In Touch</span>
+                        <h2>Visit one of our 3 Shop's locations or Contact Us from Everywhere Online!</h2>
+                        <h3>Central Office</h3>
+                        <ul>
+                            <li>
+                                <i class="uil uil-map-marker"></i>
+                                <p>
+                                    <span>Rr.Ferid Curri, 10000, Prishtinë</span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="uil uil-envelope-alt"></i>
+                                <p>
+                                    <span>
+                                        email: <a href="mailto:info@ora-ks.com">info@ora-ks.com</a>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="uil uil-phone-alt"></i>
+                                <p>
+                                    <span>
+                                        tel: <a href="tel:+38349778080">+383 (0) 49 77 80 80</a>
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="uil uil-clock-ten"></i>
+                                <p>
+                                    <span>Monday to Friday: 07:00am - 22:00pm</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-6 map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5867.874923170626!2d21.13740393677828!3d42.66268064128041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ef86fd72b6f%3A0x40a27e0bd10ed26f!2sFerid%20Curri%2C%20Prishtin%C3%AB!5e0!3m2!1sen!2s!4v1645317422116!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 form">
+                        <form action="">
+                            <span>Leave a Message</span>
+                            <h3>For any request, clarification or criticism you can contact us directly by phone or you can write to us by e-mail by filling out the following form!</h3>
+                            <input type="text" placeholder="Your Name" />
+                            <input type="text" placeholder="Your E-Mail Address" />
+                            <input type="text" placeholder="Your Subject" />
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <button class="btn-normal">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 people">
+                        <div>
+                            <img src="./assets/img/favicon.png" alt="Ora">
+                            <p>
+                                <span>John Doe</span> Ceo-Founder & Chef <br> 
+                                Phone: +383 44 123 456 <br>
+                                Email: john.doe@ora-ks.com
+                            </p>
+                        </div>
+                        <div>
+                            <img src="./assets/img/favicon.png" alt="Ora">
+                            <p>
+                                <span>Jim Smith</span> Senior Manager <br> 
+                                Phone: +383 44 123 456 <br>
+                                Email: john.doe@ora-ks.com
+                            </p>
+                        </div>
+                        <div>
+                            <img src="./assets/img/favicon.png" alt="Ora">
+                            <p>
+                                <span>Philipp Smith</span> Organisatory <br> 
+                                Phone: +383 44 123 456 <br>
+                                Email: john.doe@ora-ks.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-lg-8">
+                        <div class="newstext">
+                            <h4>Sign Up For Newsletters!</h4>
+                            <p>Get E-Mail updates about our Latest Products and <span>special offers</span>.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="n-form">
+                            <input type="text" placeholder="Your E-Mail Address...">
+                            <button class="btn-normal">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main><!-- main-body-end ./ -->
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+{% endblock %}

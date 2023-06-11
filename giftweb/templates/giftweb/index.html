@@ -1,0 +1,255 @@
+
+{% extends 'giftweb/base.html' %}
+
+{% block title %}
+    GiftWeb - Home
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+    <main class="wrapper">
+        <section class="carousel">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="{% static 'assetso\img\slider\1.jpg' %}" class="d-block w-100" alt="Dhurat&euml; q&euml; ja Vlen!">
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="{% static 'assetso\img\slider\2.jpg' %}" class="d-block w-100" alt="Citizen">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assetso\img\slider\3.jpg' %}" class="d-block w-100" alt="Jacques Lemans">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assetso\img\slider\4.jpg' %}" class="d-block w-100" alt="Quantum">
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assetso\img\slider\5.jpg' %}" class="d-block w-100" alt="Pierre Cardin">
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assetso\img\slider\6.jpg' %}" class="d-block w-100" alt="Lee Coper">
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assetso\img\slider\7.jpg' %}" class="d-block w-100" alt="Roamer">
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'assetso\img\slider\8.jpg' %}" class="d-block w-100" alt="Riparim dhe Servisim Profesional | Ora-Ks.com">
+                        <div class="carousel-caption d-none d-md-block text-white">
+                            <h5>ORA - Exclusive distributor for Kosovo.</h5>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section><!-- wrapper&carousel-end ./ -->
+        <section class="products-categories" id="categories-section">
+            <div class="container">
+                <article class="product-box">
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\swatch.png' %}" alt="Swatch" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\jacques-lemans.png' %}" alt="Jacques Lemans" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\citizen.png' %}" alt="Citizen" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\zeppelin.png' %}" alt="Zeppelin" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\roamer.png' %}" alt="Roamer" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\LC.png' %}" alt="Lee Cooper" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\pcd.png' %}" alt="Pierre Cardin" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\gant.png' %}" alt="Gant" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\quantum.png' %}" alt="Quantum" />
+                        </a>
+                    </div>
+                    <div class="cat-box">
+                        <a href="#">
+                            <img src="{% static 'assetso\img\categories\danish.png' %}" alt="Danish Design" />
+                        </a>
+                    </div>
+                    
+ 
+                </article>
+            </div>
+        </section>
+
+<script>
+    // Get the current time
+    var currentTime = new Date();
+
+    // Calculate the time intervals
+    var sixHours = 6 * 60 * 60 * 1000; // 6 hours in milliseconds
+    var displayTime = 5 * 1000; // 10 seconds in milliseconds
+
+    // Calculate the start and end times for displaying the section
+    var startTime = new Date(Math.floor(currentTime.getTime() / displayTime) * displayTime);
+    var endTime = new Date(startTime.getTime() + displayTime);
+
+    // Get the stored visibility state from local storage
+    var visibilityState = localStorage.getItem("categoriesVisibility");
+
+    // Check if the stored visibility state is null or if the stored end time is in the past
+    if (
+        visibilityState === null ||
+        new Date(parseInt(visibilityState)).getTime() < currentTime.getTime() ||
+        (currentTime.getTime() - new Date(parseInt(visibilityState)).getTime() >= sixHours)
+    ) {
+        // Show the section for 10 seconds
+        var categoriesSection = document.getElementById("categories-section");
+        categoriesSection.style.display = "block";
+
+        // Store the visibility state in local storage
+        localStorage.setItem("categoriesVisibility", endTime.getTime().toString());
+
+        // Hide the section after 10 seconds
+        setTimeout(function() {
+            categoriesSection.style.display = "none";
+            // Remove the stored visibility state from local storage
+            localStorage.removeItem("categoriesVisibility");
+        }, displayTime);
+    } else {
+        // Hide the section if it should not be displayed
+        var categoriesSection = document.getElementById("categories-section");
+        categoriesSection.style.display = "none";
+    }
+</script>
+
+<section class="products pm">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <article class="title text-center">
+                    <h2 class="title-sec">Products</h2>
+                    <p class="sub-title">Prefered <i class="uil uil-list-ui-alt"></i></p>
+                </article>
+            </div>
+        </div>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item discount">
+                        <div class="product-item-inner">
+                            {% if product.discount %}
+                                <span class="discount">-{{ product.discount }}%</span>
+                            {% endif %}
+                            <a href="{% url 'giftweb:product_detail' product.id %}" class="link">
+                                <figure class="img-box">
+                                    <img src="{{ product.image.url }}" alt="Ore Quantum PWG927.650">
+                                </figure>
+                            </a>
+                            <div class="details">
+                                <span class="cat"><i class="uil uil-tag-alt"></i> {{ product.name }}</span>
+                                <a href="{% url 'giftweb:product_detail' product.id %}" class="link">
+                                    <h5 class="title">Ore {{ product.name }} PWG927.650</h5>
+                                </a>
+                                <div class="star">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <h4 id="remaining-time">{{ product.price }}&euro;</h4>
+                                </div>
+                               
+                                <a href="{% url 'giftweb:product_detail' product.id %}" class="go-to-cart">
+                                    <i class="uil uil-shopping-bag shopping-cart cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- products-end ./ -->
+                
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                    </div>
+                    <div class="row">
+                {% endif %}
+            {% empty %}
+                <p>No products available.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section><!-- products-end ./ -->
+
+
+
+
+    </main><!-- main-body-end ./ -->
+
+{% endblock %}
+
